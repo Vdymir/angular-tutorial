@@ -13,10 +13,27 @@ import { HousingService } from '../housing.service';
 })
 export class HomeComponent {
   title = 'Homes';
+  isLoading = true;
   housingService: HousingService = inject(HousingService);
   housingLocationList: HousingLocation[] = [];
+  filteredLocationList: HousingLocation[] = [];
 
   constructor() {
-    this.housingLocationList = this.housingService.getAllHousingLocations();
+    this.housingService.getAllHousingLocations().then((value) => {
+      this.housingLocationList = value;
+      this.filteredLocationList = value;
+      this.isLoading = false;
+    });
+  }
+
+  filterResults(text: string) {
+    if (!text) {
+      this.filteredLocationList = this.housingLocationList;
+      return;
+    }
+    this.filteredLocationList = this.housingLocationList.filter(
+      (housingLocation) =>
+        housingLocation?.city.toLowerCase().includes(text.toLowerCase())
+    );
   }
 }

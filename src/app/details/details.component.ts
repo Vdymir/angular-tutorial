@@ -17,6 +17,7 @@ export class DetailsComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
   housingService = inject(HousingService);
   housingLocation: HousingLocation | undefined;
+  isLoading = true;
 
   formState = new FormGroup({
     firstName: new FormControl(''),
@@ -26,8 +27,13 @@ export class DetailsComponent {
 
   constructor() {
     const housingLocationId = Number(this.route.snapshot.params['id']);
-    this.housingLocation =
-      this.housingService.getHousingLocationById(housingLocationId);
+
+    this.housingService
+      .getHousingLocationById(housingLocationId)
+      .then((data) => {
+        this.housingLocation = data;
+        this.isLoading = false;
+      });
   }
 
   submitApplication() {

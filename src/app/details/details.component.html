@@ -1,5 +1,7 @@
-template: `
-<article>
+<div *ngIf="isLoading" class="center">
+  <span class="loader"></span>
+</div>
+<article *ngIf="!isLoading">
   <img
     class="listing-photo"
     [src]="housingLocation?.photo"
@@ -33,4 +35,3 @@ template: `
     </form>
   </section>
 </article>
-`,
