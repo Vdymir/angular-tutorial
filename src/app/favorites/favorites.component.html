@@ -1,0 +1,7 @@
+<section class="results" *ngIf="locations$">
+  <app-housing-location
+    *ngFor="let housingLocation of locations$"
+    [housingLocation]="housingLocation"
+    [isHome]="false"
+  ></app-housing-location>
+</section>

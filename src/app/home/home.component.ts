@@ -1,18 +1,18 @@
-import { Component, inject } from '@angular/core';
-import { HousingLocationComponent } from '../housing-location/housing-location.component';
-import { HousingLocation } from '../housinglocation';
-import { CommonModule } from '@angular/common';
-import { HousingService } from '../housing.service';
+import { Component, inject } from "@angular/core";
+import { HousingLocationComponent } from "../housing-location/housing-location.component";
+import { HousingLocation } from "../housinglocation";
+import { CommonModule } from "@angular/common";
+import { HousingService } from "../housing.service";
 
 @Component({
-  selector: 'app-home',
+  selector: "app-home",
   standalone: true,
   imports: [CommonModule, HousingLocationComponent],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css',
+  templateUrl: "./home.component.html",
+  styleUrl: "./home.component.css",
 })
 export class HomeComponent {
-  title = 'Homes';
+  title = "Homes";
   isLoading = true;
   housingService: HousingService = inject(HousingService);
   housingLocationList: HousingLocation[] = [];
@@ -33,7 +33,7 @@ export class HomeComponent {
     }
     this.filteredLocationList = this.housingLocationList.filter(
       (housingLocation) =>
-        housingLocation?.city.toLowerCase().includes(text.toLowerCase())
+        housingLocation?.city.toLowerCase().includes(text.toLowerCase()),
     );
   }
 }

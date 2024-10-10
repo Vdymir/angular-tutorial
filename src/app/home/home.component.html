@@ -12,6 +12,7 @@
 <section class="results" *ngIf="!isLoading">
   <app-housing-location
     *ngFor="let housingLocation of filteredLocationList"
+    [isHome]="true"
     [housingLocation]="housingLocation"
   ></app-housing-location>
 </section>

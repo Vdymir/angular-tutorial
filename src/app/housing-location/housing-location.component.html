@@ -9,5 +9,15 @@
   <p class="listing-location">
     {{ housingLocation.city }}, {{ housingLocation.state }}
   </p>
-  <a [routerLink]="['/details', housingLocation.id]">Learn More</a>
+  <div class="footer-card">
+    <a [routerLink]="['/details', housingLocation.id]">Learn More</a>
+
+    <button class="icon-button" (click)="addFavorites()" *ngIf="isHome">
+      <mat-icon fontIcon="favorite" class="favorite-icon"></mat-icon>
+    </button>
+
+    <button class="icon-button" (click)="deleteFavorite()" *ngIf="!isHome">
+      <mat-icon fontIcon="delete" class="favorite-icon"></mat-icon>
+    </button>
+  </div>
 </section>

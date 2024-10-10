@@ -9,14 +9,14 @@ export class HousingService {
   private apiUrl = 'http://localhost:3000/locations';
 
   async getAllHousingLocations(): Promise<HousingLocation[]> {
-    await wait(3000);
+    await wait(1000);
     const data = await fetch(this.apiUrl);
     return (await data.json()) ?? [];
   }
   async getHousingLocationById(
     id: number
   ): Promise<HousingLocation | undefined> {
-    await wait(3000);
+    await wait(1000);
     const data = await fetch(`${this.apiUrl}/${id}`);
     return (await data.json()) ?? {};
   }

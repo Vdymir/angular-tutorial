@@ -47,3 +47,6 @@ button.primary {
     transform: rotate(360deg);
   }
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

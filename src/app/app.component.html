@@ -1,14 +1,19 @@
 <main>
-  <a [routerLink]="['/']">
-    <header class="brand-name">
+  <header class="brand-name">
+    <a [routerLink]="['/']">
       <img
         class="brand-logo"
         src="/assets/logo.svg"
         alt="logo"
         aria-hidden="true"
       />
-    </header>
-  </a>
+    </a>
+    <a [routerLink]="['/favorites']">
+      <Button>
+        <mat-icon fontIcon="folder-special" class="folder-icon"></mat-icon>
+      </Button>
+    </a>
+  </header>
   <section class="content">
     <router-outlet></router-outlet>
   </section>
