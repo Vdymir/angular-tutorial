@@ -2,8 +2,8 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { HousingService } from '../housing.service';
-import { HousingLocation } from '../housinglocation';
+import { HousingLocation } from '../../interfaces/housinglocation.interface';
+import { HousingService } from '../../services/housing.service';
 
 @Component({
   selector: 'app-details',

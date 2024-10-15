@@ -1,9 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { HousingLocation } from '../housinglocation';
 import { CommonModule } from '@angular/common';
-import { HousingLocationComponent } from '../housing-location/housing-location.component';
+import { HousingLocationComponent } from '../../components/housing-location/housing-location.component';
+import { HousingLocation } from '../../interfaces/housinglocation.interface';
 
 @Component({
   selector: 'app-favorites',

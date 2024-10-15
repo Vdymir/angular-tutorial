@@ -1,12 +1,12 @@
-import { createAction, props } from "@ngrx/store";
-import { HousingLocation } from "../../housinglocation";
+import { createAction, props } from '@ngrx/store';
+import { HousingLocation } from '../../interfaces/housinglocation.interface';
 
 export const addToFavorites = createAction(
-  "[Favorite] Add To Favorites",
-  props<{ location: HousingLocation }>(),
+  '[Favorite] Add To Favorites',
+  props<{ location: HousingLocation }>()
 );
 export const deleteFavorite = createAction(
-  "[Favorite] Delete to Favorites",
-  props<{ id: number }>(),
+  '[Favorite] Delete to Favorites',
+  props<{ id: number }>()
 );
-export const resetFavorites = createAction("[Favorite] Reset");
+export const resetFavorites = createAction('[Favorite] Reset');

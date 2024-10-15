@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { HousingLocation } from '../../housinglocation';
+import { HousingLocation } from '../../interfaces/housinglocation.interface';
 import {
   addToFavorites,
   deleteFavorite,
@@ -11,9 +11,8 @@ export const initialState: HousingLocation[] = [];
 export const favoriteReducer = createReducer(
   initialState,
   on(addToFavorites, (state, { location }) => {
-    console.log('first');
     return [...state, location];
   }),
   on(deleteFavorite, (state, { id }) => state.filter((item) => item.id !== id)),
-  on(resetFavorites, (state) => [])
+  on(resetFavorites, () => [])
 );

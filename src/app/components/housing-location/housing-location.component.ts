@@ -1,13 +1,13 @@
 import { Component, inject, input, Input } from '@angular/core';
-import { HousingLocation } from '../housinglocation';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { Store } from '@ngrx/store';
+import { HousingLocation } from '../../interfaces/housinglocation.interface';
 import {
   addToFavorites,
   deleteFavorite,
-} from '../store/actions/favorites.actions';
+} from '../../store/actions/favorites.actions';
 
 @Component({
   selector: 'app-housing-location',

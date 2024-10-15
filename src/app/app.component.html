@@ -1,19 +1,5 @@
 <main>
-  <header class="brand-name">
-    <a [routerLink]="['/']">
-      <img
-        class="brand-logo"
-        src="/assets/logo.svg"
-        alt="logo"
-        aria-hidden="true"
-      />
-    </a>
-    <a [routerLink]="['/favorites']">
-      <Button>
-        <mat-icon fontIcon="folder-special" class="folder-icon"></mat-icon>
-      </Button>
-    </a>
-  </header>
+  <app-header></app-header>
   <section class="content">
     <router-outlet></router-outlet>
   </section>
